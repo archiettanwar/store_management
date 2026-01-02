@@ -11,7 +11,7 @@ class Store:
     def available(self):
         '''Checks if there is the given item in the store or not!'''
         availability=df.loc[df["id"]==self.id,"stock"].squeeze()
-        if availability>=self.needed:
+        if int(availability)>=int(self.needed):
             return True
         else:
             return False
